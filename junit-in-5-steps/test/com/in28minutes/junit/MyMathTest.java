@@ -5,19 +5,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class MyMathTest {
-
+	
+	private MyMath math = new MyMath();
+	
 	@Test
-	void test() {
+	void calculateSum_ThreeMemberArray() {
 		
-		int[] numbers = {1,2,3};
-		MyMath math = new MyMath();
-		int result = math.calculateSum(numbers);
-		System.out.println(result);
-		int expectedResult = 5;
-		assertEquals(expectedResult, result);
+		assertEquals(6, math.calculateSum(new int[] {1,2,3}));
 		
-		//Absence of failure is success 
-		//Test conditions or asserts
 	}
+	
+	@Test
+	void calculateSum_ZeroLengthArray() {
+		
+		assertEquals(0, math.calculateSum(new int[] {}));
+		
+	}
+	
 
 }
